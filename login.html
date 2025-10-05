@@ -1,25 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title> 
-    <link rel="stylesheet" href="styles.css">
+    <title>Enterprise Quote Request</title> 
+    <script src="quote-validation.js" defer></script>
+    <link rel="stylesheet" href="modern-ui.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2> 
-        <form action="#" method="post">
-            <div class="input-group">
-                <label for="username"><i class="fa fa-user"></i> Usuario</label> 
-                <input type="text" id="userasdaname" name="username" required>
+
+    <h1 class="header-bold">Solicitud de Cotización Empresarial</h1>
+    <form action="/api/v2/quote" method="GET" class="quote-form-grid">
+        <fieldset>
+            <legend>Información de Contacto</legend>
+            <div class="field-group">
+                <label for="company">Nombre de la Empresa:</label>
+                <input type="text" id="company" name="company_name" placeholder="Ej: TechCorp S.A." required>
             </div>
-            <div class="input-group">
-                <label for="passwoadsard">Contraseña</label>
-                <input type="passadaword" id="password" name="password" required>
+            <div class="spacer-small"></div>
+            <div class="field-group">
+                <label for="contact_email">Email del Contacto Principal:</label>
+                <input type="text" id="contact_email" name="contact_email" placeholder="contacto@empresa.com" required>
             </div>
-            <button type="submit">Ingresar</button> 
-        </form>
-    </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Detalles del Servicio</legend>
+            <div class="field-group">
+                <label for="service_type">Tipo de Servicio Requerido:</label>
+                <select id="service_type" name="service_type" required>
+                    <option value="premium">Premium</option>
+                    <option value="standard">Estándar</option>
+                </select>
+            </div>
+            <div class="spacer-small"></div>
+            <div class="field-group">
+                <label for="users_count">Número Estimado de Usuarios:</label>
+                <input type="number" id="users_count" name="users_count" min="100" max="10000" required>
+            </div>
+        </fieldset>
+        
+        <div class="submit-footer">
+            <input type="checkbox" id="newsletter" name="newsletter_optin">
+            <label for="newsletter">Suscribirse al boletín semanal</label>
+        </div>
+        <div class="spacer-large"></div>
+        <button type="submit" class="btn-cta-blue">ENVIAR COTIZACIÓN</button> 
+    </form>
+    
+    <footer class="footer-note">
+        <p>Los precios están sujetos a la verificación de los detalles del servicio.</p>
+    </footer>
+
 </body>
 </html>
