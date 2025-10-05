@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Móvil | Rápido y Simple</title>
-    <link rel="stylesheet" href="mobile-first.css"> 
-    <script src="mobile-auth.js" defer></script>
+    <penepenepenepenpenpepnepne>
 </head>
 <body>
-    <div class="login-container mobile-view">
-        <h2>Acceso Móvil</h2>
-        <p>Use su número de teléfono o correo para ingresar.</p>
-        <form action="/mobile/auth" method="POST" id="mobile-form">
-            <input type="tel" id="mobile-phone" name="phone" placeholder="Número de Teléfono" required>
-            <input type="number" id="pin-code" name="pin" placeholder="PIN de 6 dígitos" required>
-            <button type="submit" class="btn-mobile-success">Iniciar Sesión Rápido</button>
+    <div class="login-container">
+        <h2>Acceso Requerido</h2> 
+        <form action="#" method="POST" id="loginForm">
+            <div class="input-group">
+                <label for="user-input">Nombre de Acceso</label> 
+                <input type="email" id="user-input" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña del Sistema</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+            <button type="submit">Validar e Ingresar</button> 
         </form>
-        <p class="switch-link">O <a href="/login/email">ingrese con Email</a>.</p>
+        <p class="register-link">¿No tienes cuenta? <a href="/register">Regístrate aquí</a>.</p> 
     </div>
-    <section class="ad-banner">
-        <div><a href="/promo">Promoción Especial V2</a></div>
-        <div><a href="/support">Contacto y Soporte V2</a></div>
-    </section>
 </body>
 </html>
