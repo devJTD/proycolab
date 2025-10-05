@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido | Inicia Sesión</title>
-    <script src="client-validation.js" defer></script>
-    <link rel="stylesheet" href="main-theme.css">
+    <title>Login Móvil | Rápido y Simple</title>
+    <link rel="stylesheet" href="mobile-first.css"> 
+    <script src="mobile-auth.js" defer></script>
 </head>
 <body>
-    <div class="login-container">
-        <h2>¡Hola! Inicia tu Sesión</h2>
-        <form action="/dashboard.html" method="GET">
-            <div class="input-group">
-                <label for="user-email">Tu Correo Electrónico</label>
-                <input type="email" id="user-email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="pass-word">Tu Contraseña</label>
-                <input type="password" id="pass-word" name="password" required minlength="6">
-            </div>
-            <button type="submit" class="btn-secondary">Entrar al Perfil</button>
+    <div class="login-container mobile-view">
+        <h2>Acceso Móvil</h2>
+        <p>Use su número de teléfono o correo para ingresar.</p>
+        <form action="/mobile/auth" method="POST" id="mobile-form">
+            <input type="tel" id="mobile-phone" name="phone" placeholder="Número de Teléfono" required>
+            <input type="number" id="pin-code" name="pin" placeholder="PIN de 6 dígitos" required>
+            <button type="submit" class="btn-mobile-success">Iniciar Sesión Rápido</button>
         </form>
-        <p class="register-link">¿No tienes cuenta? <a href="/register.html">Regístrate</a>.</p>
+        <p class="switch-link">O <a href="/login/email">ingrese con Email</a>.</p>
     </div>
+    <section class="ad-banner">
+        <div><a href="/promo">Promoción Especial V2</a></div>
+        <div><a href="/support">Contacto y Soporte V2</a></div>
+    </section>
 </body>
 </html>
