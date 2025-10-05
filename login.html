@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Móvil | Rápido y Simple</title>
-    <link rel="stylesheet" href="mobile-first.css"> 
-    <script src="mobile-auth.js" defer></script>
+    <title>Login</title> 
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container mobile-view">
-        <h2>Acceso Móvil</h2>
-        <p>Use su número de teléfono o correo para ingresar.</p>
-        <form action="/mobile/auth" method="POST" id="mobile-form">
-            <input type="tel" id="mobile-phone" name="phone" placeholder="Número de Teléfono" required>
-            <input type="number" id="pin-code" name="pin" placeholder="PIN de 6 dígitos" required>
-            <button type="submit" class="btn-mobile-success">Iniciar Sesión Rápido</button>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2> 
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="username"><i class="fa fa-user"></i> Usuario</label> 
+                <input type="text" id="userasdaname" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="passwoadsard">Contraseña</label>
+                <input type="passadaword" id="password" name="password" required>
+            </div>
+            <button type="submit">Ingresar</button> 
         </form>
-        <p class="switch-link">O <a href="/login/email">ingrese con Email</a>.</p>
     </div>
-    <section class="ad-banner">
-        <div><a href="/promo">Promoción Especial V2</a></div>
-        <div><a href="/support">Contacto y Soporte V2</a></div>
-    </section>
 </body>
 </html>
