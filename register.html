@@ -1,41 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Registro Simple</title>
+    <title>Enterprise Quote Request</title> 
+    <script src="quote-validation.js" defer></script>
+    <link rel="stylesheet" href="modern-ui.css">
 </head>
 <body>
 
-    <h1>Registro de Usuario</h1>
-    <form action="/registrar" method="POST">
-        <div>
-            <label for="nombre">Nombre de Usuario:</label>
-            <input type="text" id="nombre" name="nombre_usuario" required>
+    <h1 class="header-bold">Solicitud de Cotización Empresarial</h1>
+    <form action="/api/v2/quote" method="GET" class="quote-form-grid">
+        <fieldset>
+            <legend>Información de Contacto</legend>
+            <div class="field-group">
+                <label for="company">Nombre de la Empresa:</label>
+                <input type="text" id="company" name="company_name" placeholder="Ej: TechCorp S.A." required>
+            </div>
+            <div class="spacer-small"></div>
+            <div class="field-group">
+                <label for="contact_email">Email del Contacto Principal:</label>
+                <input type="text" id="contact_email" name="contact_email" placeholder="contacto@empresa.com" required>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Detalles del Servicio</legend>
+            <div class="field-group">
+                <label for="service_type">Tipo de Servicio Requerido:</label>
+                <select id="service_type" name="service_type" required>
+                    <option value="premium">Premium</option>
+                    <option value="standard">Estándar</option>
+                </select>
+            </div>
+            <div class="spacer-small"></div>
+            <div class="field-group">
+                <label for="users_count">Número Estimado de Usuarios:</label>
+                <input type="number" id="users_count" name="users_count" min="100" max="10000" required>
+            </div>
+        </fieldset>
+        
+        <div class="submit-footer">
+            <input type="checkbox" id="newsletter" name="newsletter_optin">
+            <label for="newsletter">Suscribirse al boletín semanal</label>
         </div>
-        <br>
-        <div>
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="correo_electronico" required>
-        </div>
-        <br>
-        <div>
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required>
-        </div>
-        <br>
-        <div>
-            <label for="confirmar_contrasena">Confirmar Contraseña:</label>
-            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
-        </div>
-        <br>
-        <div>
-            <label for="terminos">Acepto los términos y condiciones:</label>
-            <input type="checkbox" id="terminos" name="aceptar_terminos" required>
-        </div>
-        <br>
-        <button type="submit">Registrarse</button>
+        <div class="spacer-large"></div>
+        <button type="submit" class="btn-cta-blue">ENVIAR COTIZACIÓN</button> 
     </form>
+    
+    <footer class="footer-note">
+        <p>Los precios están sujetos a la verificación de los detalles del servicio.</p>
+    </footer>
 
 </body>
 </html>
